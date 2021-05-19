@@ -1,66 +1,207 @@
 <template>
-  <div class="container">
-    <div>
-      <header class="content-logos">
-        <logo />
-        <span class="plus">+</span>
-        <VuesaxLogo />
-      </header>
-      <h1 class="title">
-        Nuxt.js + Vuesax
-      </h1>
-      <h2 class="subtitle">
-        <a href="https://vuesax.com/">Vuesax</a> is a framework of ui components for <a href="https://vuejs.org/">Vuejs</a>, It was created to make new interfaces that have a new trend and are visually beautiful
-      </h2>
-      <div class="links">
-        <h3 class="h3">
-          Vuesax
-        </h3>
-        <a
-          href="https://vuesax.com/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://discordapp.com/invite/9dsKtvB"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          Discord
-        </a>
-        <a
-          href="https://github.com/lusaxweb/vuesax"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
-      </div>
-      <div class="links">
-        <h3 class="h3">
-          Nuxt.js
-        </h3>
-        <a
-          href="https://nuxtjs.org/"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--green"
-        >
-          Documentation
-        </a>
-        <a
-          href="https://github.com/nuxt/nuxt.js"
-          target="_blank"
-          rel="noopener noreferrer"
-          class="button--grey"
-        >
-          GitHub
-        </a>
+  <div>
+    <vs-navbar fixed color="dark" id="body" text-white square center-collapsed v-model="active">
+      <template #left>
+        <b>Logo</b>
+      </template>
+      <vs-navbar-item :active="active == 'profile'" id="profile" v-scroll-to='{el: "#body",easing: "ease",}'>
+        Profile
+      </vs-navbar-item>
+      <vs-navbar-item :active="active == 'software'" id="software" v-scroll-to='{el: "#software",easing: "ease",}'>
+        Software
+      </vs-navbar-item>
+      <vs-navbar-item :active="active == 'design'" id="design" v-scroll-to='{el: "#design",easing: "ease",}'>
+        Design
+      </vs-navbar-item>
+      <vs-navbar-item :active="active == 'photography'" id="photography" v-scroll-to='{el: "#photography",easing: "ease",}'>
+        Photography
+      </vs-navbar-item>
+      <template #right>
+        <vs-button color="#fff" flat >Login</vs-button>
+        <vs-button color="#fff" border >Get Started</vs-button>
+      </template>
+    </vs-navbar>
+    <div id="profile" class="square" style="margin-top:150px;">
+      <div class="grid">
+        <div style="margin-bottom:150px;">
+          <vs-row>
+            <vs-col w='5'>
+              <div class=" grid">
+                <vs-row>
+                  <vs-col w='12'>
+                    <div class="end">
+                      <vs-avatar circle style="height:85%;width:85%;">
+                        <img src="~/assets/avatar/Profile_Ricko.png" alt="">
+                      </vs-avatar>
+                    </div>
+                  </vs-col>
+                </vs-row>
+              </div>
+            </vs-col>
+            <vs-col w='6'>
+              <div class="" style="margin-top:15%;">
+                <h1 style="font-size:38px;">Hello, My Name Ricko Tiaka</h1>
+                <p>
+                  <b>I'm a Freelance Designer & Programmer, </b> interesting with Multi-Platform Application <br> and Company Branding.
+                  I Love Photography, build a Code and <br>do many things with Technology.
+                </p>
+              </div>
+            </vs-col>
+          </vs-row>
+        </div>
+        <vs-row style="background-color:rgb(30,30,30);padding:20px;" id="software">
+          <vs-col w='12'>
+            <h1 style="color:white;font-size:40px;">Software</h1>
+          </vs-col>
+          <vs-col offset='' w='4'>
+            <vs-card type="2" class="cardcontent">
+              <template #title>
+                <h3>Pot with a plant</h3>
+              </template>
+              <template #img>
+                <img src="~/assets/content/20201203_145641.jpg" alt="">
+              </template>
+            </vs-card>
+          </vs-col>
+          <vs-col w='8'>
+            <div class="grid">
+              <vs-row>
+                <vs-col w='4'>
+                  <vs-card type="2" class="cardcontent">
+                    <template #title>
+                      <h3>Pot with a plant</h3>
+                    </template>
+                    <template #img>
+                      <img src="~/assets/content/119719030_110315644155484_1711121628102453766_n.jpg" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
+                <vs-col w='4'>
+                  <vs-card type="2" class="cardcontent">
+                    <template #title>
+                      <h3>Pot with a plant</h3>
+                    </template>
+                    <template #img>
+                      <img src="~/assets/content/121509481_3269302733168262_589183152812879888_n.jpg" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
+                <vs-col w='4'>
+                  <vs-card type="2" class="cardcontent">
+                    <template #title>
+                      <h3>Pot with a plant</h3>
+                    </template>
+                    <template #img>
+                      <img src="~/assets/content/119719030_110315644155484_1711121628102453766_n.jpg" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
+              </vs-row>
+            </div>
+          </vs-col>
+        </vs-row>
+        <vs-row style="padding:20px;" id="design">
+          <vs-col w='12'>
+            <h1 style="color:black;font-size:40px;">Design</h1>
+          </vs-col>
+          <vs-col w='8'>
+            <div class="grid">
+              <vs-row>
+                <vs-col w='4'>
+                  <vs-card type="2" class="cardcontent">
+                    <template #title>
+                      <h3>Pot with a plant</h3>
+                    </template>
+                    <template #img>
+                      <img src="~/assets/content/121509481_3269302733168262_589183152812879888_n.jpg" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
+                <vs-col w='4'>
+                  <vs-card type="2" class="cardcontent">
+                    <template #title>
+                      <h3>Pot with a plant</h3>
+                    </template>
+                    <template #img>
+                      <img src="~/assets/content/119719030_110315644155484_1711121628102453766_n.jpg" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
+                <vs-col w='4'>
+                  <vs-card type="2" class="cardcontent">
+                    <template #title>
+                      <h3>Pot with a plant</h3>
+                    </template>
+                    <template #img>
+                      <img src="~/assets/content/121509481_3269302733168262_589183152812879888_n.jpg" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
+              </vs-row>
+            </div>
+          </vs-col>
+          <vs-col offset='' w='4'>
+            <vs-card type="2" class="cardcontent">
+              <template #title>
+                <h3>Pot with a plant</h3>
+              </template>
+              <template #img>
+                <img src="~/assets/content/20201203_145641.jpg" alt="">
+              </template>
+            </vs-card>
+          </vs-col>
+        </vs-row>
+        <vs-row style="background-color:rgb(30,30,30);padding:20px;" id="photography">
+          <vs-col w='12'>
+            <h1 style="color:white;font-size:40px;">Photography</h1>
+          </vs-col>
+          <vs-col offset='' w='4'>
+            <vs-card type="2" class="cardcontent">
+              <template #title>
+                <h3>Pot with a plant</h3>
+              </template>
+              <template #img>
+                <img src="~/assets/content/20201203_145641.jpg" alt="">
+              </template>
+            </vs-card>
+          </vs-col>
+          <vs-col w='8'>
+            <div class="grid">
+              <vs-row>
+                <vs-col w='4'>
+                  <vs-card type="2" class="cardcontent">
+                    <template #title>
+                      <h3>Pot with a plant</h3>
+                    </template>
+                    <template #img>
+                      <img src="~/assets/content/119719030_110315644155484_1711121628102453766_n.jpg" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
+                <vs-col w='4'>
+                  <vs-card type="2" class="cardcontent">
+                    <template #title>
+                      <h3>Pot with a plant</h3>
+                    </template>
+                    <template #img>
+                      <img src="~/assets/content/121509481_3269302733168262_589183152812879888_n.jpg" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
+                <vs-col w='4'>
+                  <vs-card type="2" class="cardcontent">
+                    <template #title>
+                      <h3>Pot with a plant</h3>
+                    </template>
+                    <template #img>
+                      <img src="~/assets/content/119719030_110315644155484_1711121628102453766_n.jpg" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
+              </vs-row>
+            </div>
+          </vs-col>
+        </vs-row>
       </div>
     </div>
   </div>
@@ -71,6 +212,9 @@ import Logo from '~/components/Logo.vue'
 import VuesaxLogo from '~/components/VuesaxLogo.vue'
 
 export default {
+  data:() => ({
+    active: 'guide'
+  }),
   components: {
     Logo,
     VuesaxLogo
@@ -79,6 +223,50 @@ export default {
 </script>
 
 <style>
+html {
+  scroll-behavior: smooth;
+}
+
+.cardcontent {
+  padding: 10px;
+}
+
+.cardcontent .vs-card {
+  max-width:500px;
+  border-radius: 0px;
+}
+
+.cardcontent .vs-card__img {
+  max-height:none;
+  border-radius: 0px;
+}
+
+.cardcontent .vs-card__img img {
+  border-radius: 0px;
+}
+
+.cardcontent .vs-card__text {
+  padding-right:100%;
+}
+
+.center {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  justify-content: center;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
+.end {
+  display: flex;
+  align-items: flex-end;
+  text-align: flex-end;
+  justify-content: flex-end;
+  padding: 20px;
+  flex-wrap: wrap;
+}
+
 .container {
   margin: 0 auto;
   min-height: 100vh;
@@ -153,5 +341,8 @@ export default {
     sans-serif;
   font-weight: 400;
   margin: 10px;
+}
+body {
+  background: #eaeaea;
 }
 </style>
