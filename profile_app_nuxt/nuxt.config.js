@@ -25,7 +25,9 @@ export default {
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
-    '@/plugins/vuesax'
+    '@/plugins/vuesax',
+    '~/plugins/scrollto',
+    '~/plugins/vuecheckview'
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -40,7 +42,7 @@ export default {
     'vue-scrollto/nuxt',
 
     // Or if you have custom options...
-    ['vue-scrollto/nuxt', { duration: 1000 }],
+    ['vue-scrollto/nuxt', { duration: 10000, easing: 'linear' }],
   ],
 
   // Build Configuration: https://go.nuxtjs.dev/config-build

@@ -21,18 +21,41 @@
         <vs-button color="#fff" border >Get Started</vs-button>
       </template>
     </vs-navbar>
-    <div id="profile" class="square" style="margin-top:150px;">
+    <div id="profile" class="square">
+      <div v-view='viewer' style="margin:50px;visibility:hidden;">here</div>
       <div class="grid">
-        <div style="margin-bottom:150px;">
+        <div v-bind:style="showem" style="margin-bottom:50px;">
           <vs-row>
             <vs-col w='5'>
               <div class=" grid">
                 <vs-row>
                   <vs-col w='12'>
                     <div class="end">
-                      <vs-avatar circle style="height:85%;width:85%;">
+                      <vs-avatar circle v-bind:style="showit" style="height:85%;width:85%;">
                         <img src="~/assets/avatar/Profile_Ricko.png" alt="">
                       </vs-avatar>
+                    </div>
+                    <div class="end">
+                      <vs-button
+                        icon
+                        color="facebook"
+                      >
+                        <i class='bx bxl-facebook-square'></i>
+                      </vs-button>
+
+                      <vs-button
+                        icon
+                        color="linkedin"
+                      >
+                        <i class='bx bxl-linkedin'></i>
+                      </vs-button>
+
+                      <vs-button
+                        icon
+                        color="#f94fb0"
+                      >
+                        <i class='bx bxl-instagram'></i>
+                      </vs-button>
                     </div>
                   </vs-col>
                 </vs-row>
@@ -41,10 +64,82 @@
             <vs-col w='6'>
               <div class="" style="margin-top:15%;">
                 <h1 style="font-size:38px;">Hello, My Name Ricko Tiaka</h1>
-                <p>
+                <h5>19 Years  /  Indonesia  /  Freelance</h5>
+                <p style="margin-top:20px;">
                   <b>I'm a Freelance Designer & Programmer, </b> interesting with Multi-Platform Application <br> and Company Branding.
-                  I Love Photography, build a Code and <br>do many things with Technology.
+                  I Love Photography, build a Code and do many things with Technology.<br> I've been worked with several software companies for 1 year, <br> I've been built social media startup applications and company profile websites 
                 </p>
+                <div class="grid" style="margin-top:20px;padding:20px;border-top:solid 1px black;">
+                  <vs-row>
+                    <vs-col w='12'>
+                      <vs-row>
+                        <vs-col class="center" w='2'>
+                          <vs-row>
+                            <vs-col w='12'>
+                              <img src="https://img.icons8.com/color/50/000000/vue-js.png"/>
+                            </vs-col>
+                            <vs-col w='12'>
+                              Vue Js
+                            </vs-col>
+                          </vs-row>
+
+                        </vs-col>
+                        <vs-col class="center" w='2'>
+                          <vs-row>
+                            <vs-col w='12'>
+                              <img src="https://img.icons8.com/fluent/48/000000/laravel.png"/>
+                            </vs-col>
+                            <vs-col w='12'>
+                              Laravel
+                            </vs-col>
+                          </vs-row>
+
+                        </vs-col>
+                        <vs-col class="center" w='2'>
+                          <vs-row>
+                            <vs-col w='12'>
+                              <img src="https://img.icons8.com/color/48/000000/django.png"/>
+                            </vs-col>
+                            <vs-col w='12'>
+                              Django
+                            </vs-col>
+                          </vs-row>
+
+                        </vs-col>
+                        <vs-col class="center" w='2'>
+                          <vs-row>
+                            <vs-col w='12'>
+                              <img src="https://img.icons8.com/color/48/000000/flutter.png"/>
+                            </vs-col>
+                            <vs-col w='12'>
+                              Flutter
+                            </vs-col>
+                          </vs-row>
+                        </vs-col>
+                        <vs-col class="center" w='2'>
+                          <vs-row>
+                            <vs-col w='12'>
+                              <img src="https://img.icons8.com/color/48/000000/bootstrap.png"/>
+                            </vs-col>
+                            <vs-col w='12'>
+                              Bootstrap
+                            </vs-col>
+                          </vs-row>
+                        </vs-col>
+                        <vs-col class="center" w='2'>
+                          <vs-row>
+                            <vs-col w='12'>
+                              <img src="https://img.icons8.com/color/48/000000/python.png"/>
+                            </vs-col>
+                            <vs-col w='12'>
+                              Python
+                            </vs-col>
+                          </vs-row>
+                        </vs-col>
+                      </vs-row>
+                    </vs-col>
+                  </vs-row>
+                </div>
               </div>
             </vs-col>
           </vs-row>
@@ -213,12 +308,38 @@ import VuesaxLogo from '~/components/VuesaxLogo.vue'
 
 export default {
   data:() => ({
-    active: 'guide'
+    active: 'guide',
+    showit: {},
+    showem: {},
   }),
   components: {
     Logo,
     VuesaxLogo
-  }
+  },
+  methods: {
+    viewer: function (e) {
+      console.log(e.type) // 'enter', 'exit', 'progress'
+      if (e.type == 'exit') {
+        this.showit = {
+          height: '65%',
+          width: '65%'
+        }
+        this.showem = {
+          marginBottom: '500px',
+        }
+      } else if (e.type == 'enter') {
+        this.showit = {
+          height: '85%',
+          width: '85%'
+        }
+        this.showem = {
+          marginBottom: '50px',
+        }
+      }
+      // console.log(e)
+      // alert('ok')
+    }
+  },
 }
 </script>
 
