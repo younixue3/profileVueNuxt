@@ -14,17 +14,45 @@
         v-scroll-to='{el: "#photography",easing: "ease",}'>
         Photography
       </vs-navbar-item>
+      <template #left>
+          <vs-button @click="activeSidebar = !activeSidebar" flat icon style="color:white;">
+            <i class='bx bx-menu' style="font-size:;"></i>
+          </vs-button>
+        </template>
     </vs-navbar>
+    <vs-sidebar
+        absolute
+        v-model="active"
+        :open.sync="activeSidebar"
+        style="position:fixed !important;"
+        >
+        <template #logo>
+          <!-- ...img logo -->
+        </template>
+         <vs-sidebar-item :active="active == 'profile'" id="profile" v-scroll-to='{el: "#body",easing: "ease",}'>
+          Profile
+        </vs-sidebar-item>
+        <vs-sidebar-item :active="active == 'software'" id="software" v-scroll-to='{el: "#software",easing: "ease",}'>
+          Software
+        </vs-sidebar-item>
+        <vs-sidebar-item :active="active == 'design'" id="design" v-scroll-to='{el: "#design",easing: "ease",}'>
+          Design
+        </vs-sidebar-item>
+        <vs-sidebar-item :active="active == 'photography'" id="photography"
+          v-scroll-to='{el: "#photography",easing: "ease",}'>
+          Photography
+        </vs-sidebar-item>
+      </vs-sidebar>
     <div id="profile" class="square">
       <div v-view='viewer' style="margin:50px;visibility:hidden;">here</div>
       <div class="grid">
         <div style="margin-bottom:50px;">
           <vs-row>
-            <vs-col w='5'>
+            <vs-col sm='12' lg='5'>
               <div class=" grid">
                 <vs-row>
                   <vs-col w='12' style="margin-top:30px;">
-                    <div class="end">
+                    <div class="lg-end sm-center">
                       <vs-avatar circle v-bind:style="showit" style="height:85%;width:85%;">
                         <img src="~/assets/avatar/Profile_Ricko.png" alt="">
                       </vs-avatar>
@@ -48,7 +76,7 @@
                 </vs-row>
               </div>
             </vs-col>
-            <vs-col w='6'>
+            <vs-col sm='12' lg='6' style="padding:10px;">
               <div class="" style="margin-top:15%;">
                 <h1 style="font-size:38px;">Hello, My Name <span style="color:gold;">Ricko Tiaka</span></h1>
                 <h5>19 Years / Indonesia / Freelance</h5>
@@ -180,7 +208,7 @@
                           <vs-col w='12' style="padding:20px;">
                             <h1>Skill</h1>
                           </vs-col>
-                          <vs-col class="center" w='2'>
+                          <vs-col class="center" sm='3' lg='2'>
                             <vs-row>
                               <vs-col w='12'>
                                 <img src="https://img.icons8.com/color/50/000000/vue-js.png" />
@@ -191,7 +219,7 @@
                             </vs-row>
 
                           </vs-col>
-                          <vs-col class="center" w='2'>
+                          <vs-col class="center" sm='3' lg='2'>
                             <vs-row>
                               <vs-col w='12'>
                                 <img src="https://img.icons8.com/fluent/48/000000/laravel.png" />
@@ -202,7 +230,7 @@
                             </vs-row>
 
                           </vs-col>
-                          <vs-col class="center" w='2'>
+                          <vs-col class="center" sm='3' lg='2'>
                             <vs-row>
                               <vs-col w='12'>
                                 <img src="https://img.icons8.com/color/48/000000/django.png" />
@@ -213,7 +241,7 @@
                             </vs-row>
 
                           </vs-col>
-                          <vs-col class="center" w='2'>
+                          <vs-col class="center" sm='3' lg='2'>
                             <vs-row>
                               <vs-col w='12'>
                                 <img src="https://img.icons8.com/color/48/000000/flutter.png" />
@@ -223,7 +251,7 @@
                               </vs-col>
                             </vs-row>
                           </vs-col>
-                          <vs-col class="center" w='2'>
+                          <vs-col class="center" sm='3' lg='2'>
                             <vs-row>
                               <vs-col w='12'>
                                 <img src="https://img.icons8.com/color/48/000000/bootstrap.png" />
@@ -233,7 +261,7 @@
                               </vs-col>
                             </vs-row>
                           </vs-col>
-                          <vs-col class="center" w='2'>
+                          <vs-col class="center" sm='3' lg='2'>
                             <vs-row>
                               <vs-col w='12'>
                                 <img src="https://img.icons8.com/color/48/000000/python.png" />
@@ -256,17 +284,17 @@
           <vs-col w='12'>
             <h1 style="color:white;font-size:40px;">Software</h1>
           </vs-col>
-          <vs-col w='8'>
+          <vs-col sm='12' lg='8'>
             <div class="grid">
               <vs-row>
-                <vs-col w='4'>
+                <vs-col sm='6' lg='4'>
                   <vs-card type="2" class="cardcontent" onclick=" window.open('https://www.helloprintinn.com/', '_blank');">
                     <template #img>
                       <img src="~/assets/content/121509481_3269302733168262_589183152812879888_n.jpg" alt="">
                     </template>
                   </vs-card>
                 </vs-col>
-                <vs-col w='4'>
+                <vs-col sm='6' lg='4'>
                   <vs-card type="2" class="cardcontent" onclick=" window.open('https://www.helloprintinn.com/', '_blank');">
                     <template #img>
                       <img src="~/assets/content/Screenshot 2021-05-23 233012.png" alt="">
@@ -281,24 +309,24 @@
           <vs-col w='12'>
             <h1 style="color:black;font-size:40px;">Design</h1>
           </vs-col>
-          <vs-col w='8'>
+          <vs-col sm='12' lg='8'>
             <div class="grid">
               <vs-row>
-                <vs-col w='4'>
+                <vs-col sm='6' lg='4'>
                   <vs-card type="2" class="cardcontent">
                     <template #img>
                       <img src="~/assets/content/Screenshot 2021-05-23 232607.png" alt="">
                     </template>
                   </vs-card>
                 </vs-col>
-                <vs-col w='4'>
+                <vs-col sm='6' lg='4'>
                   <vs-card type="2" class="cardcontent">
                     <template #img>
                       <img src="~/assets/content/119719030_110315644155484_1711121628102453766_n.jpg" alt="">
                     </template>
                   </vs-card>
                 </vs-col>
-                <vs-col w='4'>
+                <vs-col sm='6' lg='4'>
                   <vs-card type="2" class="cardcontent">
                     <template #img>
                       <img src="~/assets/content/g3143.png" alt="">
@@ -308,7 +336,7 @@
               </vs-row>
             </div>
           </vs-col>
-          <vs-col offset='' w='4'>
+          <vs-col sm='6' lg='4'>
             <vs-card type="2" class="cardcontent">
               <template #img>
                 <img src="~/assets/content/g13351-8.png" alt="">
@@ -320,14 +348,14 @@
           <vs-col w='12'>
             <h1 style="color:white;font-size:40px;">Photography</h1>
           </vs-col>
-          <vs-col offset='' w='4'>
+          <vs-col sm='6' lg='4'>
             <vs-card type="2" class="cardcontent">
               <template #img>
                 <img src="~/assets/content/20201203_145641.jpg" alt="">
               </template>
             </vs-card>
           </vs-col>
-          <vs-col w='5'>
+          <vs-col sm='6' lg='5'>
             <vs-card type="2" class="cardcontent">
               <template #img>
                 <img src="~/assets/content/20201205_170927.jpg" alt="">
@@ -349,6 +377,7 @@
       active: 'guide',
       showit: {},
       showem: false,
+      activeSidebar: false
     }),
     components: {
       Logo,
@@ -422,6 +451,27 @@
 
   .cardcontent .vs-card__text {
     padding-right: 100%;
+  }
+
+  @media only screen and (max-width:768px) {
+    .sm-center {
+      display: flex;
+      align-items: center;
+      text-align: center;
+      justify-content: center;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
+  }
+  @media only screen and (min-width:900px) {
+      .lg-end {
+      display: flex;
+      align-items: flex-end;
+      text-align: flex-end;
+      justify-content: flex-end;
+      padding: 20px;
+      flex-wrap: wrap;
+    }
   }
 
   .center {
