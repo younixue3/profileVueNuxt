@@ -301,6 +301,13 @@
                     </template>
                   </vs-card>
                 </vs-col>
+                <vs-col sm='6' lg='4'>
+                  <vs-card type="2" class="cardcontent" onclick=" window.open('http://47.254.202.219:81/#/', '_blank');">
+                    <template #img>
+                      <img src="~/assets/content/Screenshot 2021-06-23 140626.png" alt="">
+                    </template>
+                  </vs-card>
+                </vs-col>
               </vs-row>
             </div>
           </vs-col>
