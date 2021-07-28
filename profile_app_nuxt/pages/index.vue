@@ -284,7 +284,7 @@
           <vs-col w='12'>
             <h1 style="color:white;font-size:40px;">Software</h1>
           </vs-col>
-          <vs-col sm='12' lg='8'>
+          <vs-col sm='12' lg='12'>
             <div class="grid">
               <vs-row>
                 <vs-col sm='6' lg='4'>
